@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1",
+    "name": "Старший контролер качества шебуршания пакетика"
+  },
+  {
+    "_id": "2",
+    "name": "Kitten resource manager"
+  },
+  {
+    "_id": "3",
+    "name": "Tech kitten lead"
+  },
+  {
+    "_id": "4",
+    "name": "Junior кусь engineer"
+  },
+  {
+    "_id": "5",
+    "name": "Кусь engineer"
+  },
+  {
+    "_id": "6",
+    "name": "Senior кусь engineer"
+  },
+  {
+    "_id": "7",
+    "name": "Junior тыг-дык engineer"
+  },
+  {
+    "_id": "8",
+    "name": "Тыг-дык engineer"
+  },
+  {
+    "_id": "9",
+    "name": "Senior тыг-дык engineer"
+  }
+]

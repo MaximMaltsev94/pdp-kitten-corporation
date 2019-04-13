@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "1",
+    "name" : "Боня",
+    "age" : 2,
+    "department": "Пакетиков",
+    "jobTitle" : "Старший контролер качества шебуршания пакетика"
+  },
+  {
+    "_id": "2",
+    "name" : "Хлоя",
+    "age" : 1,
+    "department": "Пакетиков",
+    "jobTitle" : "Kitten resource manager"
+  },
+  {
+    "_id": "3",
+    "name" : "Герри",
+    "age" : 1,
+    "department": "Тыг-дык тыг-дык в 5 утра",
+    "jobTitle" : "Junior тыг-дык engineer"
+  },
+  {
+    "_id": "4",
+    "name" : "Шанти",
+    "age" : 5,
+    "department": "Не твоих собачьих дел",
+    "jobTitle" : "Tech kitten lead"
+  },
+  {
+    "_id": "5",
+    "name" : "Глория",
+    "age" : 3,
+    "department": "Кусь",
+    "jobTitle" : "Senior кусь engineer"
+  }
+]

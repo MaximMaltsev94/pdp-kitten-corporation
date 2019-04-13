@@ -17,6 +17,7 @@
         <jstl.version>1.2</jstl.version>
         <compiler.plugin.version>3.5</compiler.plugin.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
+        <mongodb.plugin.version>1.1.1</mongodb.plugin.version>
     </properties>
 
 
@@ -34,7 +35,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
@@ -42,7 +42,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
@@ -103,6 +102,44 @@
                     <port>9090</port>
                     <path>/</path>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.syncleus.maven.plugins</groupId>
+                <artifactId>maven-mongodb-plugin</artifactId>
+                <version>${mongodb.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>start</id>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                        <configuration>
+                            <port>27015</port>
+                            <version>3.0.2</version>
+
+                            <databaseDirectory>/tmp/mongotest</databaseDirectory>
+
+                            <imports>
+                                <import>
+                                    <database>kitten-corporation</database>
+                                    <collection>kittens</collection>
+                                    <file>${pom.basedir}/dbinit/kittens.json</file>
+                                </import>
+                                <import>
+                                    <database>kitten-corporation</database>
+                                    <collection>departments</collection>
+                                    <file>${pom.basedir}/dbinit/departments.json</file>
+                                </import>
+                                <import>
+                                    <database>kitten-corporation</database>
+                                    <collection>job-titles</collection>
+                                    <file>${pom.basedir}/dbinit/jobTitles.json</file>
+                                </import>
+                            </imports>
+
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
