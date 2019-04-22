@@ -1,22 +1,27 @@
 [
   {
-    "_id": "1",
-    "name" : "Шебуршания пакетиков"
+    "_id" : ObjectId("111111111111111111111111"),
+    "name" : "Шебуршания пакетиков",
+    "maxKittenCount" : NumberInt(15)
   },
   {
-    "_id": "2",
-    "name" : "Не твоих собачьих дел"
+    "_id" : ObjectId("222222222222222222222222"),
+    "name" : "Не твоих собачьих дел",
+    "maxKittenCount" : NumberInt(5)
   },
   {
-    "_id": "3",
-    "name" : "Кусь"
+    "_id" : ObjectId("333333333333333333333333"),
+    "name" : "Кусь",
+    "maxKittenCount" : NumberInt(10)
   },
   {
-    "_id": "4",
-    "name" : "Тыг-дык тык-дык в 5 утра"
+    "_id" : ObjectId("444444444444444444444444"),
+    "name" : "Тыг-дык тык-дык в 5 утра",
+    "maxKittenCount" : NumberInt(20)
   },
   {
-    "_id": "5",
-    "name" : "Урчания"
+    "_id" : ObjectId("555555555555555555555555"),
+    "name" : "Урчания",
+    "maxKittenCount" : NumberInt(40)
   }
 ]

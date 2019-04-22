@@ -9,15 +9,15 @@
 <html>
 <head>
     <title>${title}</title>
-    <link rel="stylesheet" href="<c:url value="static/semantic.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/static/semantic.min.css" />">
 
-    <script src="<c:url value="static/jquery.min.js"/>"></script>
-    <script src="<c:url value="static/semantic.min.js"/>"></script>
+    <script src="<c:url value="/static/jquery.min.js"/>"></script>
+    <script src="<c:url value="/static/semantic.min.js"/>"></script>
 </head>
 
 <body>
 
-<div class="ui container">
+<div class="ui raised container segment">
     <jsp:doBody/>
 </div>
 

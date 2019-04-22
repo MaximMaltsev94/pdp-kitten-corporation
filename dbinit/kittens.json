@@ -1,37 +1,37 @@
 [
   {
-    "_id": "1",
+    "_id" : ObjectId("111111111111111111111111"),
     "name" : "Боня",
-    "age" : 2,
-    "department": "Пакетиков",
-    "jobTitle" : "Старший контролер качества шебуршания пакетика"
+    "age" : NumberInt(2),
+    "department": ObjectId("111111111111111111111111"),
+    "jobTitle" : ObjectId("111111111111111111111111")
   },
   {
-    "_id": "2",
+    "_id" : ObjectId("222222222222222222222222"),
     "name" : "Хлоя",
-    "age" : 1,
-    "department": "Пакетиков",
-    "jobTitle" : "Kitten resource manager"
+    "age" : NumberInt(1),
+    "department": ObjectId("111111111111111111111111"),
+    "jobTitle" : ObjectId("222222222222222222222222")
   },
   {
-    "_id": "3",
+    "_id" : ObjectId("333333333333333333333333"),
     "name" : "Герри",
-    "age" : 1,
-    "department": "Тыг-дык тыг-дык в 5 утра",
-    "jobTitle" : "Junior тыг-дык engineer"
+    "age" : NumberInt(1),
+    "department": ObjectId("444444444444444444444444"),
+    "jobTitle" : ObjectId("777777777777777777777777")
   },
   {
-    "_id": "4",
+    "_id" : ObjectId("444444444444444444444444"),
     "name" : "Шанти",
-    "age" : 5,
-    "department": "Не твоих собачьих дел",
-    "jobTitle" : "Tech kitten lead"
+    "age" : NumberInt(5),
+    "department": ObjectId("222222222222222222222222"),
+    "jobTitle" : ObjectId("333333333333333333333333")
   },
   {
-    "_id": "5",
+    "_id" : ObjectId("555555555555555555555555"),
     "name" : "Глория",
-    "age" : 3,
-    "department": "Кусь",
-    "jobTitle" : "Senior кусь engineer"
+    "age" : NumberInt(3),
+    "department": ObjectId("333333333333333333333333"),
+    "jobTitle" : ObjectId("666666666666666666666666")
   }
 ]

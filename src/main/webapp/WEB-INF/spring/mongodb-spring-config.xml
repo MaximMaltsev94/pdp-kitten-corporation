@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mongoClient" class="com.mongodb.client.MongoClients" factory-method="create">
+        <constructor-arg value="mongodb://${mongodb.host}:${mongodb.port}"/>
+    </bean>
+
+    <bean id="mongoCollectionFactory" class="pdp.kitten.corporation.repository.util.MongoCollectionFactory">
+        <constructor-arg ref="mongoClient"/>
+        <property name="databaseName" value="${mongodb.database.name}"/>
+    </bean>
+
+    <bean id="departmentMongoCollection" factory-bean="mongoCollectionFactory" factory-method="getCollection">
+        <constructor-arg value="DEPARTMENT_COLLECTION"/>
+    </bean>
+
+    <bean id="kittenMongoCollection" factory-bean="mongoCollectionFactory" factory-method="getCollection">
+        <constructor-arg value="KITTEN_COLLECTION"/>
+    </bean>
+
+    <bean id="jobTitleMongoCollection" factory-bean="mongoCollectionFactory" factory-method="getCollection">
+        <constructor-arg value="JOB_TITLE_COLLECTION"/>
+    </bean>
+</beans>

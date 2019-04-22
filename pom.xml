@@ -11,21 +11,39 @@
 
     <properties>
         <spring.version>5.1.5.RELEASE</spring.version>
-        <commons.lang.version>3.4</commons.lang.version>
+        <commons.lang.version>3.8.1</commons.lang.version>
+        <commons.collections.version>4.1</commons.collections.version>
         <javaee.verson>3.1.0</javaee.verson>
         <jsp.version>2.0</jsp.version>
         <jstl.version>1.2</jstl.version>
         <compiler.plugin.version>3.5</compiler.plugin.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <mongodb.plugin.version>1.1.1</mongodb.plugin.version>
+        <mongo.java.driver.version>3.10.1</mongo.java.driver.version>
+        <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
+        <mongodb.version>3.2.22</mongodb.version>
+        <!--<mongodb.version>3.0.2</mongodb.version>-->
+        <slf4j.log4j.version>1.7.26</slf4j.log4j.version>
+        <aspectj.version>1.6.11</aspectj.version>
     </properties>
-
 
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons.lang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons.collections.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.log4j.version}</version>
         </dependency>
 
         <dependency>
@@ -46,6 +64,12 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongo.java.driver.version}</version>
         </dependency>
 
         <dependency>
@@ -78,6 +102,18 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
     </dependencies>
 
 
@@ -103,6 +139,26 @@
                     <path>/</path>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>${properties.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${basedir}/src/main/resources/app-default.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>com.syncleus.maven.plugins</groupId>
                 <artifactId>maven-mongodb-plugin</artifactId>
@@ -114,10 +170,10 @@
                             <goal>start</goal>
                         </goals>
                         <configuration>
-                            <port>27015</port>
-                            <version>3.0.2</version>
+                            <port>${mongodb.port}</port>
+                            <version>${mongodb.version}</version>
 
-                            <databaseDirectory>/tmp/mongotest</databaseDirectory>
+                            <databaseDirectory>${embedmongo.store.dir}</databaseDirectory>
 
                             <imports>
                                 <import>
