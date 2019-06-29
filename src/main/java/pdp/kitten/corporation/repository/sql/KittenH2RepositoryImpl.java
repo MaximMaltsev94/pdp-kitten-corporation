@@ -27,13 +27,17 @@ public class KittenH2RepositoryImpl implements KittenRepository {
     private static final String SELECT_ALL_KITTENS = "SELECT dep.id as departmentId, dep.name as departmentName, maxKittenCount, kit.id as kittenID, kit.name as kittenName, kit.age as kittenAge, jobTitleId, tit.name as jobTitleName\n" +
             "        from  %s as dep right join %s as kit on dep.id = kit.departmentID left join %s as tit on kit.jobTitleID = tit.id";
 
-    private static final String SELECT_ALL_BY_ID = SELECT_ALL_KITTENS + " WHERE id = %d";
+    private static final String SELECT_ALL_BY_ID = SELECT_ALL_KITTENS + " WHERE id = %s";
     private static final String INSERT_KITTEN = "INSERT INTO %s (name, age, departmentId, jobTitleId) VALUES('%s', %s, %s, %s)";
     private static final String UPDATE_KITTEN = "UPDATE %s SET name='%s', age=%s, departmentId=%s, jobTitleId=%s WHERE id=%s";
     private static final String DELETE_KITTEN = "DELETE FROM ? WHERE id=?";
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     private RowMapper<Kitten> kittenRowMapper = (rs, i) -> {
 
@@ -110,7 +114,8 @@ public class KittenH2RepositoryImpl implements KittenRepository {
                 kitten.getName(),
                 kitten.getAge(),
                 kitten.getDepartment().getId(),
-                kitten.getJobTitle().getId()));
+                kitten.getJobTitle().getId(),
+                kitten.getId()));
         return kitten;
     }
 
