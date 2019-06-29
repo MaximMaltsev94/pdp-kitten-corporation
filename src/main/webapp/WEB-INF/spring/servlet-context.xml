@@ -15,7 +15,7 @@
     <context:property-placeholder location="classpath*:app-default.properties"/>
 
     <context:component-scan base-package="pdp.kitten.corporation.config"/>
-    <import resource="mongodb-spring-config.xml"/>
+    <import resource="h2db-spring-config.xml"/>
 
     <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
 

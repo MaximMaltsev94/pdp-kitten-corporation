@@ -24,7 +24,7 @@ import static com.mongodb.client.model.Filters.eq;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.JOB_TITLE_COLLECTION;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.KITTEN_COLLECTION;
 
-@Repository
+//@Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     private MongoCollection<Document> departmentCollection;

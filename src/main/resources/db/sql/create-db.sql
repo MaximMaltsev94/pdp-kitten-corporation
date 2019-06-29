@@ -1,0 +1,32 @@
+DROP SCHEMA IF EXISTS KITTEN_CORPORATION CASCADE;
+
+CREATE SCHEMA KITTEN_CORPORATION;
+
+CREATE TABLE KITTEN_CORPORATION.JOB_TITLES (
+    id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+    name NVARCHAR(300) NOT NULL,
+
+    PRIMARY KEY (`id`),
+);
+
+CREATE TABLE KITTEN_CORPORATION.DEPARTMENTS (
+     id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+     name NVARCHAR(300) NOT NULL,
+     maxKittenCount INT UNSIGNED NOT NULL,
+
+     PRIMARY KEY (`id`),
+);
+
+CREATE TABLE KITTEN_CORPORATION.KITTENS (
+                            id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+                            name NVARCHAR(300) NOT NULL,
+                            age TINYINT UNSIGNED NOT NULL,
+                            departmentID INT,
+                            jobTitleID INT,
+
+                            PRIMARY KEY (`id`),
+                            FOREIGN KEY (departmentID) REFERENCES KITTEN_CORPORATION.DEPARTMENTS(id) ON DELETE SET NULL,
+                            FOREIGN KEY (jobTitleID) REFERENCES KITTEN_CORPORATION.JOB_TITLES(id) ON DELETE SET NULL
+
+);
+
