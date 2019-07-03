@@ -4,6 +4,8 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags" %>
 
 <%@attribute name="defaultDepartmentId" required="false" %>
+<%@ attribute name="departments" required="true" type="java.util.List" %>
+<%@ attribute name="jopTitles" required="true" type="java.util.List" %>
 
 <ui:formSubmitModal title="Нанять котика" modalId="hireKittenModal" formId="hireKittenForm">
     <form id="hireKittenForm" class="ui form" method="post" action="<c:url value="/kittens/save"/>">
