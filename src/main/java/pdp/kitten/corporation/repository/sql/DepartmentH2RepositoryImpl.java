@@ -14,12 +14,10 @@ import pdp.kitten.corporation.repository.DepartmentRepository;
 import java.sql.Statement;
 import java.util.*;
 
+import static pdp.kitten.corporation.repository.sql.TableConstants.*;
+
 @Repository
 public class DepartmentH2RepositoryImpl implements DepartmentRepository {
-
-    private static final String JOB_TITLES_TABLE = "KITTEN_CORPORATION.JOB_TITLES";
-    private static final String DEPARTMENTS_TABLE = "KITTEN_CORPORATION.DEPARTMENTS";
-    private static final String KITTENS_TABLE = "KITTEN_CORPORATION.KITTENS";
 
     private static final String SELECT_ALL_DEPARTMENTS = "SELECT dep.id as departmentId, dep.name as departmentName, maxKittenCount, kit.id as kittenID, kit.name as kittenName, kit.age as kittenAge, jobTitleId, tit.name as jobTitleName\n" +
             "        from %s as dep left join %s as kit on dep.id = kit.departmentID left join %s as tit on kit.jobTitleID = tit.id";

@@ -11,7 +11,6 @@ import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
 import pdp.kitten.corporation.domain.Department;
 import pdp.kitten.corporation.repository.converter.DepartmentAggregateConverter;
 import pdp.kitten.corporation.repository.converter.DepartmentToDocumentConverter;

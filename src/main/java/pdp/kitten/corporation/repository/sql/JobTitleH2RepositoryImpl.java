@@ -13,10 +13,10 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
+import static pdp.kitten.corporation.repository.sql.TableConstants.JOB_TITLES_TABLE;
+
 @Repository
 public class JobTitleH2RepositoryImpl implements JobTitleRepository {
-
-    private static final String JOB_TITLES_TABLE = "KITTEN_CORPORATION.JOB_TITLES";
 
     private static final String SELECT_ALL_QUERY = "SELECT * FROM %s";
     private static final String SELECT_BY_ID_QUERY = "SELECT * FROM %s WHERE id=%s";
