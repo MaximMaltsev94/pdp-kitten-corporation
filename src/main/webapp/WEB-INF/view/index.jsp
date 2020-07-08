@@ -49,6 +49,6 @@
         </form>
     </ui:formSubmitModal>
 
-    <ui:hireKittenModal/>
+    <ui:hireKittenModal departments="${departments}" jopTitles="${jobTitles}"/>
 </ui:html>
 

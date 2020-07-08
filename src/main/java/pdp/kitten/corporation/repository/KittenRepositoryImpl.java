@@ -22,7 +22,7 @@ import static com.mongodb.client.model.Filters.*;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.DEPARTMENT_COLLECTION;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.JOB_TITLE_COLLECTION;
 
-@Repository
+//@Repository
 public class KittenRepositoryImpl implements KittenRepository {
 
     private MongoCollection<Document> kittenMongoCollection;

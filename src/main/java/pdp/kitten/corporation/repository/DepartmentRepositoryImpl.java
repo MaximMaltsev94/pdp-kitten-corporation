@@ -11,7 +11,6 @@ import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
 import pdp.kitten.corporation.domain.Department;
 import pdp.kitten.corporation.repository.converter.DepartmentAggregateConverter;
 import pdp.kitten.corporation.repository.converter.DepartmentToDocumentConverter;
@@ -24,7 +23,7 @@ import static com.mongodb.client.model.Filters.eq;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.JOB_TITLE_COLLECTION;
 import static pdp.kitten.corporation.repository.util.KittenCorporationCollections.KITTEN_COLLECTION;
 
-@Repository
+//@Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
     private MongoCollection<Document> departmentCollection;

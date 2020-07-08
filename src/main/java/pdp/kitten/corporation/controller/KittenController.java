@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pdp.kitten.corporation.domain.Kitten;
 import pdp.kitten.corporation.service.DepartmentService;
+import pdp.kitten.corporation.service.JobTitleService;
 import pdp.kitten.corporation.service.KittenService;
 
 @Controller
@@ -16,16 +17,20 @@ public class KittenController {
 
     private DepartmentService departmentService;
 
+    private JobTitleService jobTitleService;
+
     @Autowired
-    public KittenController(KittenService kittenService, DepartmentService departmentService) {
+    public KittenController(KittenService kittenService, DepartmentService departmentService, JobTitleService jobTitleService) {
         this.kittenService = kittenService;
         this.departmentService = departmentService;
+        this.jobTitleService = jobTitleService;
     }
 
     @GetMapping
     public String kittensHome(Model model) {
         model.addAttribute("kittens", kittenService.getAll());
         model.addAttribute("departments", departmentService.getAll());
+        model.addAttribute("jobTitles", jobTitleService.getAll());
         return "kittens";
     }
 

@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
-@Repository
+//@Repository
 public class JobTitleRepositoryImpl implements JobTitleRepository {
 
     private MongoCollection<Document> jobTitleMongoCollection;

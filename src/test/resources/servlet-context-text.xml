@@ -15,9 +15,8 @@
     <context:property-placeholder location="classpath*:app-default.properties"/>
 
     <context:component-scan base-package="pdp.kitten.corporation.config"/>
-    <import resource="h2db-spring-config.xml"/>
+    <import resource="h2db-spring-config-test.xml"/>
 
-    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
 
     <aop:config>
         <aop:aspect id="loggerAspect" ref="loggerAspect">
